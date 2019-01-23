@@ -7,3 +7,5 @@ LIST<-list.files(pattern = "NUTS3", recursive = TRUE)
 
 Climate   = lapply(LIST, function(x) fread(x,header=TRUE , sep=";", dec=".", na.strings="NA"))%>%
             bind_rows()
+setwd("~/Documents/2018Drought")
+fwrite(Climate, "Climate.csv")
